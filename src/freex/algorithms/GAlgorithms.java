@@ -14,7 +14,7 @@ public class GAlgorithms {
 	int [][] weightMatrix;    // matrix for weight for the paths
 	
 	
-	
+	public int[][]
 	//----------------------------------------------------------------------------------------------------------------------//
 
 	/**
