@@ -31,15 +31,16 @@ public class DoubleLinkedList <T> {
 	/**
 	 * Returns the position number (index)  of a given element.
 	 * Position number (index) starts at cero (0).
-	 * @param <U>
+	 * 
+	 * @param <T>
 	 * @param pData
 	 * @return position
 	 */
 	
-	public <U> int getElementPosition(U pData){
+	public <T> int getElementPosition(T pData){
 		
 		int index = 0;
-		DoubleNode<T> tmp = head; 
+		DoubleNode<T> tmp = (DoubleNode<T>) head; 
 		
 		while(tmp != null){
 			if(tmp.getData().equals(pData)){
@@ -70,7 +71,7 @@ public class DoubleLinkedList <T> {
 	 * 
 	 * @param pData
 	 */
-	public void insertBeginning(T pData){
+	public boolean insertBeginning(T pData){
 		
 		DoubleNode<T> data = new DoubleNode<T>(pData);
 		
@@ -83,6 +84,7 @@ public class DoubleLinkedList <T> {
 		data.setNext(head); //data.next = head;
 		head = data; //head = data;
 		index++;
+		return true;
 	}
 	
 	/**
@@ -90,7 +92,7 @@ public class DoubleLinkedList <T> {
 	 * 
 	 * @param pData
 	 */
-	public void insertEnd(T pData){
+	public boolean insertEnd(T pData){
 		
 		DoubleNode<T> data = new DoubleNode<T>(pData);
 		
@@ -103,6 +105,7 @@ public class DoubleLinkedList <T> {
 		}
 		tail = data; //tail = head;
 		index++;
+		return true;
 	}
 	
 	/**
@@ -176,7 +179,7 @@ public class DoubleLinkedList <T> {
 	/**
 	 * Removes the first the element of the list. 
 	 */
-	public void deleteBeginning(){
+	public boolean deleteBeginning(){
 		
 		//List only has one element
 		if (head == tail) {
@@ -189,12 +192,13 @@ public class DoubleLinkedList <T> {
 		head.setNext(tmp.getNext());
 		head.setPrev(null);
 		}
+		return true;
 	}
 	
 	/**
 	 * Removes the last element of the list. 
 	 */
-	public void deleteEnd() {
+	public boolean deleteEnd() {
 		//List only has one element
 		if (head == tail) {
 			head = tail = null;
@@ -202,6 +206,7 @@ public class DoubleLinkedList <T> {
 			tail = tail.getPrev();
 			tail.setNext(null);			
 		}
+		return true;
 	}
 	
 	/**
@@ -246,30 +251,25 @@ public class DoubleLinkedList <T> {
 			DoubleNode<T> temp = head;
 			
 			for (int j = 1; j < index; j++) {
-				
 				temp = temp.getNext();
 			} 
 			
 			DoubleNode<T> next = temp.getNext();
 			DoubleNode<T> prev = temp.getPrev();
 			
-			
 			if (prev == null) {
 				temp = null;
 				head = next;
-			} else if (next == null) {
+			}else if (next == null) {
 				temp = null;
 				prev.setNext(null);
-			} else {
+			}else {
 				temp = null;
 				prev.setNext(next);
 			}
-			
 			System.out.println("Deleted");
-			
 			return true;
 		}
-
 	}
 		
 
