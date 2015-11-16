@@ -18,11 +18,7 @@ public class Graph implements GraphModel{
 	public DoubleLinkedList listEdges = new DoubleLinkedList(); // a list of the edges
 	
 	int cv=0; // contador de lv
-	int ce=0; // contador de le
-	
-	long [][] AdyancentMatrix; // matrix for paths possible paths
-	int [][] weightMatrix;    // matrix for weight for the paths
-	
+	int ce=0; // contador de le	
 	
 	/**
 	 * Constructor

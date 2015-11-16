@@ -1,9 +1,22 @@
 package freex.algorithms;
 
-import java.util.ArrayList;
-
+/**
+ * GAlgorithms Class allow to apply different algorithms into
+ * any graph. GAlgorithms wraps the Graph and work it out through
+ * the methods it has. 
+ *  
+ * @author Randy
+ *
+ */
 public class GAlgorithms {
 	
+	long [][] AdyancentMatrix; // matrix for paths possible paths
+	int [][] weightMatrix;    // matrix for weight for the paths
+	
+	
+	
+	//----------------------------------------------------------------------------------------------------------------------//
+
 	/**
 	 * FLOYD !!!
 	 * 
