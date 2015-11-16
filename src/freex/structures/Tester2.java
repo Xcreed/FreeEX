@@ -6,10 +6,9 @@ public class Tester2{
 	}
 	
 	public static void main(String[] args) {
-		String r="";
 		System.out.println("------------------------------------------------");
 		System.out.println("Nuevo Grafo");
-		ListEdgesGraph g= new ListEdgesGraph(); 
+		Graph g= new Graph(); 
 		System.out.println("------------------------------------------------");
 		System.out.println("Insertar Cliente A:");
 		Clients v1 = g.insertClient("A"); 
@@ -88,6 +87,10 @@ public class Tester2{
 		System.out.println("Numero de vertices: "+g.numVertex());
 		System.out.println("Numero de aristas: "+g.numEdges());
 		System.out.println("Grado del vertice A: "+g.degree(v1));
-		System.out.println("Grado del vertice BaseStation III: "+g.degree(v8));
+		System.out.println(g.adyacentVertex(v1));
+		//DoubleLinkedList y = g.adyacentVertex(v1);
+		//System.out.println(y.print());
+		//System.out.println("Grado del vertice BaseStation III: "+g.degree(v8));
+		
 	}
 }

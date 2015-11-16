@@ -110,10 +110,11 @@ public class DoubleLinkedList <T> {
 	
 	/**
 	 * Return a list (type StringBuilder) that shows all the node together.
+	 * @return 
 	 * 
 	 * @return list 
 	 */
-	public void print(){	
+	public StringBuilder print(){	
 		
 		StringBuilder list = new StringBuilder();
 		DoubleNode<T> tmp = head;
@@ -123,8 +124,8 @@ public class DoubleLinkedList <T> {
 			list.append(tmp.getData() + ",");
 			tmp = tmp.getNext();
 		}
-		System.out.println(list);
-		//return list;
+		//System.out.println(list);
+		return list;
 	}
 	
 	/**

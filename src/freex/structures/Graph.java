@@ -1,32 +1,219 @@
 package freex.structures;
+import java.util.*;
 
 /**
- * Interface for the Graph.
+ * Class ListEdgeGraph implements the interface Graph
+ * and allow to manipulate the Graph. 
  * 
  * @author Randy
+ *
  */
+	
+public class Graph implements GraphModel{
+		
+	//public LinkedList lv=new LinkedList();
+	//public LinkedList le=new LinkedList();
+	
+	public DoubleLinkedList listVertex = new DoubleLinkedList(); // a list for the vertex
+	public DoubleLinkedList listEdges = new DoubleLinkedList(); // a list of the edges
+	
+	int cv=0; // contador de lv
+	int ce=0; // contador de le
+	
+	long [][] AdyancentMatrix; // matrix for paths possible paths
+	int [][] weightMatrix;    // matrix for weight for the paths
+	
+	
+	/**
+	 * Constructor
+	 */
+	public Graph(){
+	}
+	
+	/**
+	 * Return the amount of Vertex in the Graph.
+	 * 
+	 * @return int
+	 */
+	public int numVertex(){
+		return listVertex.getLength();
+	}
+	
+	/**
+	 * Return the amount of Edges in the Graph.
+	 * 
+	 *@return int
+	 */
+	public int numEdges(){
+		return listEdges.getLength();
+	}
+	
+	/**
+	 * Return the DoubleLinkedList of the Vertex
+	 * of the graph.
+	 *  
+	 * @return listVertex
+	 */
+	public DoubleLinkedList vertex(){
+		return listVertex;
+	}
+	
+	/**
+	 * Return the DoubleLinkedList of the Edges 
+	 * of the Graph.
+	 * 
+	 * @return listEdges
+	 */
+	public DoubleLinkedList edges(){
+		return listEdges;
+	}
+	
+	/**
+	 * Inserts and returns a new Vertex (client) 
+	 * into the Graph.
+	 * 
+	 * @return v
+	 */
+	public Clients insertClient(String name){
+		Clients c = new Clients (name);
+		listVertex.insertEnd(c);
+		return c;
+	}
 
-public interface Graph{
+	/**
+	 * Inserts and returns a new Vertex (BaseStations)
+	 * into the Graph.
+	 * 
+	 * @returns bs
+	 */
+	public BaseStations insertBaseStation(String name){
+		BaseStations bs = new BaseStations(name);
+		listVertex.insertEnd(bs);
+		return bs;
+	}
 	
-	public int numVertex();
+	/**
+	 * Insert and return the newest Edge made in the
+	 * the Graph.
+	 * 
+	 * @return Edge
+	 */
+	public Edge insertEdge(Vertex v, Vertex w, int weight){
+		int x,y;
+		Edge e = new Edge(v,w,weight);
+		listEdges.insertEnd(e);
+		x=v.getEi(); // getting out
+		x++;
+		v.setEi(x);
+		y=w.getEi(); //getting in
+		y++;
+		w.setEi(y);
+		return e;
+	}
 	
-	public int numEdges();
+	/**
+	 * Returns the degree of the given Vertex (V)
+	 * in the Graph. Degree is the amount of edges, coming
+	 * in and out, that a given Vertex has.
+	 * 
+	 * @param V
+	 * @return int
+	 */
+	public int degree(Vertex V){
+		for (int i=0; i<listVertex.getLength(); i++){
+			Vertex V2=(Vertex)listVertex.getItem(i);
+			if (V==V2){
+				return V.getEi();
+			}
+		}
+		return 0;
+	}
+
 	
-	public DoubleLinkedList vertex();
+	//Regresa una lista de los vértices adyacentes a V
+	public DoubleLinkedList adyacentVertex(Vertex V){
+		DoubleLinkedList L= new DoubleLinkedList();
+		for (int i=0; i<listEdges.getLength(); i++){ 
+			Edge e=(Edge)listEdges.getItem(i);
+			Vertex V1=e.getV1();
+			Vertex V2=e.getV2();
+			if (V1==V){
+				L.insertEnd (V2);
+			}else if (V2==V){
+				L.insertEnd(V1);
+			}
+		}
+		//L.print();
+		return L;
+	}
 	
-	public DoubleLinkedList edges();
+	//        una lista
+	//Regresa un iterador de las aristas que inciden en V
+	public DoubleLinkedList incidentEdges(Vertex V){
+		DoubleLinkedList L=new DoubleLinkedList();
+		for (int i=0; i<listEdges.getLength(); i++){ 
+			Edge e=(Edge)listEdges.getItem(i);
+			Vertex V1=e.getV1();
+			Vertex V2=e.getV2();
+			if (V1==V){ 
+				L.insertEnd(e);
+			}else if (V2==V){ 
+				L.insertEnd(e);
+			}
+		}
+		return L;
+	}
+
+	public int[][] makeWeightMatrix(DoubleLinkedList listVertex, DoubleLinkedList listEdges) {
+		int sizeMatrix = listVertex.getLength();
+		DoubleLinkedList listAdyacent;
+		int[][] finalMatrix;
+		
+		for(int i=0; i<sizeMatrix; i++){
+			for(int j=0; j<sizeMatrix; j++){
+				//listAdyacent = this.adyacentVertex(listVertex[j]);
+				//for(int k=0; k<)
+				
+			}
+		}
+		return null;
+	}
+
 	
-	public Clients insertClient(String name);
+	public long[][] makeAdyacentMatrix(DoubleLinkedList listVertex, DoubleLinkedList listEdges) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
-	public BaseStations insertBaseStation(String name);
-	
-	public Edge insertEdge(Vertex v, Vertex w, int weight);
-	
-	public int degree(Vertex V);
-	
-	public DoubleLinkedList adyacentVertex(Vertex V);
-	
-	public DoubleLinkedList incidentEdges(Vertex V);
-	
-//	public String dfs();
+//	//Regresa el recorrido dfs de G
+//	public String dfs(){
+//		for (int i=0; i<listVertex.getLength(); i++){ 
+//			Vertex w=(Vertex)listVertex.getItem(i);
+//			w.setState(0);
+//		}
+//		DoubleLinkedList L=new DoubleLinkedList();
+//		DoubleLinkedList L2=new DoubleLinkedList();
+//		int c=0;
+//		Vertex w=(Vertex)listVertex.getItem(0);
+//		L.insertEnd(w);
+//		w.setState(1);
+//		String r="";
+//		while (L.getLength() !=0){
+//			w=(Vertex)L.getFirst();
+//			//System.out.println(w.getElement());
+//			r=r+w.getElement();
+//			w.setState(3);
+//			c--;
+//			L.removeFirst();
+//			L2=adjacentVertices(w);
+//			for (int i=0;i<L2.size(); i++){ 
+//				Vertex y=(Vertex)L2.get(i);
+//				if (y.getState()==0){
+//					L.add(c++,y);
+//					y.setState(2);
+//				}
+//			}
+//		}
+//	return r;
+//	}
 }
