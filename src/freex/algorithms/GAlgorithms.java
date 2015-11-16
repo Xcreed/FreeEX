@@ -1,7 +1,15 @@
 package freex.algorithms;
 
-public class Floyd {
+import java.util.ArrayList;
+
+public class GAlgorithms {
 	
+	/**
+	 * FLOYD !!!
+	 * 
+	 * @param mAdy
+	 * @return
+	 */
 	public String floydAl(long [][] mAdy){
 		
 		int vertex = mAdy.length;
@@ -65,7 +73,14 @@ public class Floyd {
 		}
 		return "Paths \n" + msg + "shortest paths \n" + pathsAlt;
 	}
-	
+	/**
+	 * floyd !!!!
+	 * @param i
+	 * @param k
+	 * @param pathsAux
+	 * @param pathsUsed
+	 * @return
+	 */
 	public String pathR(int i, int k, String[][] pathsAux, String pathsUsed){
 		if (pathsAux[i][k].equals("")){
 			return "";
@@ -74,4 +89,66 @@ public class Floyd {
 			return pathsUsed;
 		}
 	}
+	
+	//----------------------------------------------------------------------------------------------------------------------//
+//	/**
+//	 * kruskal !!!!
+//	 * @param grafo
+//	 * @return
+//	 */
+//	public ListEdgesGraphs aplicarKruskal(ListEdgesGraphs grafo){
+//		Grafo árbol=new Grafo();
+//		ArrayList<String> nodos=grafo.getNombres();
+//
+//		for(int j=0;j<nodos.size();j++){
+//			árbol.ingresarNodo(nodos.get(j));
+//		}
+//
+//		ArrayList<Arco> L=(ArrayList<Arco>)grafo.getAristas().clone();
+//
+//		Arco pro=L.get(0);
+//		árbol.adicionarEnlace(pro.getInicial(), pro.getTerminal(), pro.getPeso());
+//		L.remove(pro);
+//
+//		while(L.size()!=0)
+//		{
+//			pro=L.get(0);
+//
+//			if(HayCiclo(árbol, pro,árbol.getNodo(pro.getTerminal()) , pro.getTerminal())==false)
+//				árbol.adicionarEnlace(pro.getInicial(), pro.getTerminal(), pro.getPeso());
+//
+//			L.remove(pro);
+//		}
+//
+//		return árbol;
+//	}
+//
+//	/**
+//	 * kruskal !!!!!
+//	 * 
+//	 * @param g
+//	 * @param aVerificar
+//	 * @param terminal
+//	 * @param N
+//	 * @return
+//	 */
+//	public boolean HayCiclo(Grafo g,Arco aVerificar,Nodo terminal,String N){
+//		ArrayList<Enlace> aux=terminal.getEnlaces();
+//
+//		if(aux.size()==0)
+//			return false;
+//
+//		if(terminal.existeEnlace(aVerificar.getInicial())!=-1)
+//			return true;
+//
+//		for(int i=0;i<aux.size();i++)
+//		{
+//			Enlace nodo=aux.get(i);
+//
+//			if(nodo.getDestino().equals(N)==false)
+//				if( HayCiclo(g,aVerificar,g.getNodo(nodo.getDestino()),terminal.getNombre()))
+//									return true;
+//		}
+//		return false;
+//	}
 }

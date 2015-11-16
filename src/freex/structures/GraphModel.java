@@ -1,7 +1,7 @@
 package freex.structures;
 
 /**
- * Interface for the Graph.
+ * Interface GraphModel  for the class Graph.
  * 
  * @author Randy
  */
@@ -32,6 +32,5 @@ public interface GraphModel{
 	
 	public int[][] makeWeightMatrix(DoubleLinkedList listVertex, DoubleLinkedList listEdges);
 	
-	
-//	public String dfs();
+	//public String dfs();
 }

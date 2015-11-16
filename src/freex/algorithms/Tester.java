@@ -14,7 +14,7 @@ public abstract class Tester {
 						{999999999,999999999,999999999,7,0,3},
 						{999999999,999999999,999999999,2,999999999,0},
 						};
-		Floyd matrixsPaths = new Floyd();
+		GAlgorithms matrixsPaths = new GAlgorithms();
 		System.out.println(matrixsPaths.floydAl(mat));
 		
 
