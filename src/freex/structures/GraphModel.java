@@ -1,7 +1,7 @@
 package freex.structures;
 
 /**
- * Interface GraphModel  for the class Graph.
+ * Interface GraphModel for the Graph Class.
  * 
  * @author Randy
  */

@@ -1,5 +1,12 @@
 package freex.structures;
 
+/**
+ * Edge Class for the edges that manke union
+ * between different node inside the Graph.
+ * 
+ * @author Randy
+ *
+ */
 public class Edge{
 	
 	int weight;
@@ -30,10 +37,20 @@ public class Edge{
 		weight=this.weight;
 	}
 	
+	/**
+	 * Return one vertex connected into the Edge.
+	 * 
+	 * @return v1
+	 */
 	public Vertex getV1(){
 		return v1;
 	}
 	
+	/**
+	 * Return one vertex connected into the Edge.
+	 * 
+	 * @return v2
+	 */
 	public Vertex getV2(){ 
 		return v2;
 	}

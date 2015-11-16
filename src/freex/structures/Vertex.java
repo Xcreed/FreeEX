@@ -1,5 +1,12 @@
 package freex.structures;
 
+/**
+ * Interface class Vertex is a model for the
+ * Client Class. 
+ * 
+ * @author Randy
+ *
+ */
 public interface Vertex {
 	
 	/*metodos necesarios de la lógica del programa*/

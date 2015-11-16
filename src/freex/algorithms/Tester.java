@@ -16,8 +16,6 @@ public abstract class Tester {
 						};
 		GAlgorithms matrixsPaths = new GAlgorithms();
 		System.out.println(matrixsPaths.floydAl(mat));
-		
-
 	}
 
 }
