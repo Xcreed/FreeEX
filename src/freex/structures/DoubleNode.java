@@ -7,7 +7,6 @@ package freex.structures;
 
 public class DoubleNode<T> {
 	
-	
 	private DoubleNode<T> next; 
 	private DoubleNode<T> prev;
 	private T data; 			
