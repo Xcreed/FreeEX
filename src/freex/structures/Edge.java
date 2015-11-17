@@ -1,7 +1,7 @@
 package freex.structures;
 
 /**
- * Edge Class for the edges that manke union
+ * Edge Class for the edges that make union
  * between different node inside the Graph.
  * 
  * @author Randy
