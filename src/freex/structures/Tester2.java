@@ -85,10 +85,19 @@ public class Tester2{
 		System.out.println("Numero de vertices: "+g.numVertex());
 		System.out.println("Numero de aristas: "+g.numEdges());
 		System.out.println("Grado del vertice A: "+g.degree(v1));
-		System.out.println(g.adyacentVertex(v1));
+		System.out.println(g.adjacentVertex(v1));
 		//DoubleLinkedList y = g.adyacentVertex(v1);
 		//System.out.println(y.print());
 		//System.out.println("Grado del vertice BaseStation III: "+g.degree(v8));
+		
+		DoubleLinkedList LL = new DoubleLinkedList();
+		LL.insertEnd(44);
+		LL.insertEnd(88);
+		LL.insertEnd(7);
+		LL.insertEnd(6);
+		LL.insertEnd(5);
+		System.out.println(LL.getItem(0));
+		
 		
 	}
 }
