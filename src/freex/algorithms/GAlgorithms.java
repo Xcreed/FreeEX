@@ -15,20 +15,28 @@ public class GAlgorithms {
 	long [][] weightMatrix;    // matrix for weight for the paths
 	
 	
-	public int[][] makeAdjacentMatrix(Graph graph){
-		DoubleLinkedList listVertex = graph.vertex();
-		int lenMatrix = listVertex.getLength();
-		boolean bool = false;
-		
-		for(int i = 0; i<lenMatrix; i++){
-			for(int j = 0; j<lenMatrix; i++){
-				Vertex ver = (Vertex) listVertex.getItem(j);
-				DoubleLinkedList listVer = graph.adjacentVertex(ver);
-				
-			}
-		}
-		return AdjancentMatrix;
-	}
+//	public int[][] makeAdjacentMatrix(Graph graph){
+//		DoubleLinkedList listVertex = graph.vertex();
+//		int lenMatrix = listVertex.getLength();
+//		boolean bool = false;
+//		
+//		for(int i = 0; i<lenMatrix; i++){
+//			for(int j = 0; j<lenMatrix; i++){
+//				Vertex ver = (Vertex) listVertex.getItem(j); // VER IS AN VERTEX
+//				DoubleLinkedList listVer = graph.adjacentVertex(ver); // LISTVER IS A LIST THAT CONTAINT THE ADYACENT VERTEX OF VER
+//				if(listVer.getItem(j).){
+//					
+//				}
+//				
+//					
+//			
+//				}
+//				
+//			}
+//		return AdjancentMatrix;
+//		}
+//		
+//	
 	//----------------------------------------------------------------------------------------------------------------------//
 
 	/**
@@ -116,16 +124,16 @@ public class GAlgorithms {
 			return pathsUsed;
 		}
 	}
-	
+}
 	//----------------------------------------------------------------------------------------------------------------------//
 //	/**
 //	 * kruskal !!!!
 //	 * @param grafo
 //	 * @return
 //	 */
-	public ListEdgesGraphs aplicarKruskal(ListEdgesGraphs grafo){
-		Graph treeGraph = new Graph();
-		ArrayList<String> nodos=grafo.getNombres();
+	//public ListEdgesGraphs aplicarKruskal(ListEdgesGraphs grafo){
+		//Graph treeGraph = new Graph();
+		//ArrayList<String> nodos=grafo.getNombres();
 //
 //		for(int j=0;j<nodos.size();j++){
 //			árbol.ingresarNodo(nodos.get(j));
@@ -178,4 +186,4 @@ public class GAlgorithms {
 //		}
 //		return false;
 //	}
-}
+//}
