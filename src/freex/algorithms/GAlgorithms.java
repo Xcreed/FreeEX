@@ -11,6 +11,7 @@ import freex.structures.*;
  */
 public class GAlgorithms {
 	
+
 	int [][] AdjancentMatrix; // matrix for paths possible paths
 	long [][] weightMatrix;    // matrix for weight for the paths
 	
@@ -37,6 +38,26 @@ public class GAlgorithms {
 //		}
 //		
 //	
+
+//	int [][] AdjancentMatrix; // matrix for paths possible paths
+//	long [][] weightMatrix;    // matrix for weight for the paths
+//	
+//	
+//	public int[][] makeAdjacentMatrix(Graph graph){
+//		DoubleLinkedList listVertex = graph.vertex();
+//		int lenMatrix = listVertex.getLength();
+//		boolean bool = false;
+//		
+//		for(int i = 0; i<lenMatrix; i++){
+//			for(int j = 0; j<lenMatrix; i++){
+//				Vertex ver = (Vertex) listVertex.getItem(j);
+//				DoubleLinkedList listVer = graph.adjacentVertex(ver);
+//				
+//			}
+//		}
+//		return AdjancentMatrix;
+//	}
+
 	//----------------------------------------------------------------------------------------------------------------------//
 
 	/**
@@ -132,7 +153,11 @@ public class GAlgorithms {
 //	 * @return
 //	 */
 	//public ListEdgesGraphs aplicarKruskal(ListEdgesGraphs grafo){
+
 		//Graph treeGraph = new Graph();
+
+	//	Graph treeGraph = new Graph();
+
 		//ArrayList<String> nodos=grafo.getNombres();
 //
 //		for(int j=0;j<nodos.size();j++){
