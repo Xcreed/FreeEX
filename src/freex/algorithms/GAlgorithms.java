@@ -123,9 +123,9 @@ public class GAlgorithms {
 //	 * @param grafo
 //	 * @return
 //	 */
-	public ListEdgesGraphs aplicarKruskal(ListEdgesGraphs grafo){
-		Graph treeGraph = new Graph();
-		ArrayList<String> nodos=grafo.getNombres();
+	//public ListEdgesGraphs aplicarKruskal(ListEdgesGraphs grafo){
+	//	Graph treeGraph = new Graph();
+		//ArrayList<String> nodos=grafo.getNombres();
 //
 //		for(int j=0;j<nodos.size();j++){
 //			árbol.ingresarNodo(nodos.get(j));
