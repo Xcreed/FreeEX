@@ -11,9 +11,6 @@ import java.util.*;
 	
 public class Graph implements GraphModel{
 		
-	//public LinkedList lv=new LinkedList();
-	//public LinkedList le=new LinkedList();
-	
 	public DoubleLinkedList listVertex = new DoubleLinkedList(); // a list for the vertex
 	public DoubleLinkedList listEdges = new DoubleLinkedList(); // a list of the edges
 	
@@ -127,7 +124,13 @@ public class Graph implements GraphModel{
 
 	
 	//Regresa una lista de los vértices adyacentes a V
-	public DoubleLinkedList adyacentVertex(Vertex V){
+	/**
+	 * Returns a DoubleLinkedList of all the adjacent Vertexes
+	 * from a given vertex. 
+	 * 
+	 * @return DoubleLinkedList
+	 */
+	public DoubleLinkedList adjacentVertex(Vertex V){
 		DoubleLinkedList L= new DoubleLinkedList();
 		for (int i=0; i<listEdges.getLength(); i++){ 
 			Edge e=(Edge)listEdges.getItem(i);
@@ -143,8 +146,12 @@ public class Graph implements GraphModel{
 		return L;
 	}
 	
-	//        una lista
-	//Regresa un iterador de las aristas que inciden en V
+	
+	/**
+	 * Returns all the incident Edges from a given Vertex.
+	 * 
+	 * @return DoubleLinkedList
+	 */
 	public DoubleLinkedList incidentEdges(Vertex V){
 		DoubleLinkedList L=new DoubleLinkedList();
 		for (int i=0; i<listEdges.getLength(); i++){ 
@@ -158,27 +165,6 @@ public class Graph implements GraphModel{
 			}
 		}
 		return L;
-	}
-
-	public int[][] makeWeightMatrix(DoubleLinkedList listVertex, DoubleLinkedList listEdges) {
-		int sizeMatrix = listVertex.getLength();
-		DoubleLinkedList listAdyacent;
-		int[][] finalMatrix;
-		
-		for(int i=0; i<sizeMatrix; i++){
-			for(int j=0; j<sizeMatrix; j++){
-				//listAdyacent = this.adyacentVertex(listVertex[j]);
-				//for(int k=0; k<)
-				
-			}
-		}
-		return null;
-	}
-
-	
-	public long[][] makeAdyacentMatrix(DoubleLinkedList listVertex, DoubleLinkedList listEdges) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	
 //	//Regresa el recorrido dfs de G

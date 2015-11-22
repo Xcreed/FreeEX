@@ -24,13 +24,9 @@ public interface GraphModel{
 	
 	public int degree(Vertex V);
 	
-	public DoubleLinkedList adyacentVertex(Vertex V);
+	public DoubleLinkedList adjacentVertex(Vertex V);
 	
 	public DoubleLinkedList incidentEdges(Vertex V);
-	
-	public long[][] makeAdyacentMatrix(DoubleLinkedList listVertex, DoubleLinkedList listEdges);
-	
-	public int[][] makeWeightMatrix(DoubleLinkedList listVertex, DoubleLinkedList listEdges);
 	
 	//public String dfs();
 }
